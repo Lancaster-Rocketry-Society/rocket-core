@@ -1,0 +1,65 @@
+name: "✨ Feature / Story"
+description: "Propose a new feature or user story"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Feature / Story
+        Use this to propose new functionality for any subsystem.
+
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      description: Which part of the project does this affect?
+      options:
+        - Flight Computer
+        - Ground Station
+        - Simulations
+        - Shared / Protocols
+        - Tools / Build
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should be built? Be specific.
+      placeholder: "As a [role], I want [feature] so that [reason]..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this is done?
+      placeholder: |
+        - [ ] Sensor reads temperature over I2C
+        - [ ] Values logged to serial at 10Hz
+        - [ ] Unit test covers edge cases
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Links, diagrams, datasheets, related issues, etc.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Estimated Difficulty
+      options:
+        - "🟢 Good First Issue"
+        - "🟡 Medium"
+        - "🔴 Complex"
+    validations:
+      required: false

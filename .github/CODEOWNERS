@@ -1,0 +1,29 @@
+# CODEOWNERS — Automatically assigns reviewers to PRs
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Each line is a file pattern followed by one or more GitHub usernames or team names.
+# The LAST matching pattern takes precedence.
+#
+# Update these with actual GitHub usernames / team names as the society grows.
+
+# Default — Principal Software Engineer reviews everything not covered below
+*                           @your-username
+
+# Flight computer firmware
+/flight-computer/           @your-username @flight-software-team
+
+# Ground station
+/ground-station/            @your-username @ground-station-team
+
+# Simulations & data analysis
+/simulations/               @your-username
+
+# Shared protocol definitions — changes here affect multiple subsystems
+/shared/                    @your-username
+
+# Documentation & workshops
+/docs/                      @your-username
+/workshops/                 @your-username
+
+# CI/CD and repo config — only leads should change these
+/.github/                   @your-username

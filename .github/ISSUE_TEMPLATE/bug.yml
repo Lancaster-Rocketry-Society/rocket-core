@@ -1,0 +1,59 @@
+name: "🐛 Bug Report"
+description: "Report a bug or unexpected behaviour"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Help us fix things by providing as much detail as possible.
+
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Flight Computer
+        - Ground Station
+        - Simulations
+        - Shared / Protocols
+        - Tools / Build
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Compile with `make`
+        2. Flash to board
+        3. Observe serial output
+        4. See incorrect altitude reading
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, compiler version, board, etc.
+      placeholder: "Ubuntu 24.04, arm-none-eabi-gcc 13.2, STM32F4"
+    validations:
+      required: false
