@@ -20,23 +20,6 @@ tools/analyze_flight.py          post-flight summary, plots, OpenRocket export
 docs/                            wiring + launch-day checklist
 ```
 
-## ⚠ Which board is this actually?
-
-The parts list says **Arduino Nano 33 IoT**, but the board in the avionics
-photo is an **Arduino Nano ESP32** (it's printed on the silkscreen, and the
-radio module is a u-blox NORA-W106, which is the ESP32-S3 part). The two look
-nearly identical and use the same pin labels.
-
-The firmware supports **both** — it sticks to the common Arduino API and
-handles the one real difference (ESP32 SD paths need a leading `/`)
-automatically. The only thing that matters is selecting the right board in
-the IDE before flashing, because the wrong choice simply won't upload:
-
-* Tools → Board → **Arduino Nano ESP32** (board package: "Arduino ESP32
-  Boards") — this is what the photo shows
-* or Tools → Board → **Arduino Nano 33 IoT** (board package: "Arduino SAMD
-  Boards") if that's what is actually mounted
-
 ## Build & flash (Arduino IDE 2.x)
 
 1. Install the board package for the board you have (Boards Manager).
